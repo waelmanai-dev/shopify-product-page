@@ -1,0 +1,27 @@
+<div class="product-gallery-wrapper">
+  <!-- Thumbnails -->
+  <div class="swiper product-thumbs">
+    <div class="swiper-wrapper">
+      {% for image in product.images %}
+        <div class="swiper-slide">
+          <img src="{{ image | img_url: '150x' }}" alt="{{ product.title }}">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Main Slider -->
+  <div class="swiper product-swiper">
+    <div class="swiper-wrapper">
+      {% for image in product.images %}
+        <div class="swiper-slide">
+          <img src="{{ image | img_url: '800x' }}" alt="{{ product.title }}">
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
